@@ -84,7 +84,7 @@ This state is specific to the browser profile and site origin. It is not synchro
 - Orders, cart contents, favorites, and customer details are client-side records and can be edited or removed in the browser.
 - Product browsing and price estimates depend on third-party network services. There is no local catalog fallback.
 - Search matches product titles only; it does not search descriptions or categories as free text.
-- Favorites can be changed from a product detail page. The home page displays favorites but does not provide a direct remove action in that list.
+- Favorites can be added or removed from a product detail page or removed directly from the home page's Favorites list.
 - The home page's product and category counts reflect the catalog response currently fetched by the client, capped at 100 products.
 - The current order-success message in `js/checkout.js` reads “order saved. Cash on delivery is selected” with a leading space; it could be made clearer, and should continue to identify the order as a demo.
 

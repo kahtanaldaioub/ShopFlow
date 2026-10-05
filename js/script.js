@@ -207,27 +207,35 @@ function renderStars(rating) {
   return `<span class="rating-stars" role="img" aria-label="${rating.toFixed(1)} out of 5 stars">${stars}</span>`;
 }
 
-function renderProductCard(product) {
+function renderProductCard(product, showRemoveFavorite = false) {
   const detailsPage = window.location.pathname.includes('/html/')
     ? 'productDetails.html'
     : './html/productDetails.html';
+  const cardContent = `
+    <div class="product-card-art">
+      <span class="product-category">${product.category}</span>
+      <span class="product-card-orbit" aria-hidden="true"></span>
+      <img class="product-card-image" src="${product.image}" alt="${product.title}">
+    </div>
+    <div class="product-card-body">
+      <h3>${product.title}</h3>
+      <div class="product-card-meta">
+        <div class="rating">${renderStars(product.rating.rate)} </div>
+        <span class="product-card-view" aria-hidden="true">DISCOVER ↗</span>
+      </div>
+      <div class="price">${render2Price(product.price)}</div>
+    </div>
+  `;
+  const linkClass = showRemoveFavorite ? 'product-card-link' : 'product-card';
+  const cardLink = `<a class="${linkClass}" href="${detailsPage}?id=${product.id}">${cardContent}</a>`;
+
+  if (!showRemoveFavorite) return cardLink;
 
   return `
-    <a class="product-card" href="${detailsPage}?id=${product.id}">
-      <div class="product-card-art">
-        <span class="product-category">${product.category}</span>
-        <span class="product-card-orbit" aria-hidden="true"></span>
-        <img class="product-card-image" src="${product.image}" alt="${product.title}">
-      </div>
-      <div class="product-card-body">
-        <h3>${product.title}</h3>
-        <div class="product-card-meta">
-          <div class="rating">${renderStars(product.rating.rate)} </div>
-          <span class="product-card-view" aria-hidden="true">DISCOVER ↗</span>
-        </div>
-        <div class="price">${render2Price(product.price)}</div>
-      </div>
-    </a>
+    <div class="product-card favorite-product-card">
+      ${cardLink}
+      <button class="favorite-remove-button" type="button" data-id="${product.id}" aria-label="Remove ${product.title} from favorites">Remove favorite</button>
+    </div>
   `;
 }
 

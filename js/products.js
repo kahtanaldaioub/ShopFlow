@@ -78,7 +78,7 @@ function renderProducts(resetPage = false) {
     const pageProducts = filtered.slice(startIndex, startIndex + productsPerPage);
 
     clearMessage('productsMessage');
-    container.innerHTML = pageProducts.map(renderProductCard).join('');
+    container.innerHTML = pageProducts.map(product => renderProductCard(product)).join('');
     pagination.hidden = totalPages <= 1;
     document.getElementById('pageIndicator').textContent = `Page ${currentPage} of ${totalPages}`;
     document.getElementById('previousPage').disabled = currentPage === 1;

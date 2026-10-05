@@ -197,6 +197,35 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
+.favorite-product-card {
+  gap: 12px;
+}
+
+.product-card-link {
+  color: inherit;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  text-decoration: none;
+}
+
+.favorite-remove-button {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 9px 12px;
+}
+
+.favorite-remove-button:hover {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
 .product-card img {
   width: 100%;
   height: 160px;
@@ -2045,4 +2074,3 @@ body.light .stat span {
     margin-left: 14px;
   }
 }
-
