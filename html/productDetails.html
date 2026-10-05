@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Flow - Product Details</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/shop-flow-icon.svg">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a class="logo" href="index.html" aria-label="Shop Flow home"><img src="../assets/shop-flow-logo.svg" alt="Shop Flow"></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="checkout.html">Orders</a>
+        <a href="cart.html">Cart <span id="cartCount" class="cart-count">0</span></a>
+      </nav>
+      <button id="themeButton" class="theme-button" aria-label="Switch to dark theme" title="Switch to dark theme"><img class="icon" src="../assets/icon-moon.svg" alt=""></button>
+    </div>
+  </header>
+
+  <main class="page">
+    <p class="message" id="productMessage">Loading product...</p>
+    <div id="productDetail"></div>
+  </main>
+
+  <footer class="footer">
+    <p><strong>Shop Flow</strong> <span>From Latakia, for the neighborhood.</span></p>
+    <p class="currency-rate-status" id="currencyRateStatus"></p>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/productDetails.js"></script>
+</body>
+</html>

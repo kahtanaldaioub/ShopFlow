@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Flow - Products</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/shop-flow-icon.svg">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a class="logo" href="index.html" aria-label="Shop Flow home"><img src="../assets/shop-flow-logo.svg" alt="Shop Flow"></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a class="active" href="products.html">Products</a>
+        <a href="checkout.html">Orders</a>
+        <a href="cart.html">Cart <span id="cartCount" class="cart-count">0</span></a>
+      </nav>
+      <button id="themeButton" class="theme-button" aria-label="Switch to dark theme" title="Switch to dark theme"><img class="icon" src="../assets/icon-moon.svg" alt=""></button>
+    </div>
+  </header>
+
+  <main class="page">
+    <h1 class="section-title">All Products</h1>
+
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="Search products...">
+      <select id="categorySelect">
+        <option value="all">All Categories</option>
+      </select>
+      <select id="sortSelect">
+        <option value="default">Sort by: Default</option>
+        <option value="price-low">Price: Low to High</option>
+        <option value="price-high">Price: High to Low</option>
+        <option value="name">Name: A to Z</option>
+        <option value="rating">Rating: High to Low</option>
+      </select>
+    </div>
+
+    <p class="message" id="productsMessage">Loading products...</p>
+    <div class="product-grid" id="productList"></div>
+    <nav class="products-pagination" id="productsPagination" aria-label="Product pages" hidden>
+      <button class="pagination-button" id="previousPage" type="button" disabled>Previous</button>
+      <span class="page-indicator" id="pageIndicator"></span>
+      <button class="pagination-button" id="nextPage" type="button">Next</button>
+    </nav>
+  </main>
+
+  <footer class="footer">
+    <p><strong>Shop Flow</strong> <span>From Latakia, for the neighborhood.</span></p>
+    <p class="currency-rate-status" id="currencyRateStatus" ></p>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/products.js"></script>
+</body>
+</html>

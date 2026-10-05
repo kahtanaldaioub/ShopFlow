@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Flow - Checkout & Orders</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/shop-flow-icon.svg">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="navbar-inner">
+      <a class="logo" href="index.html" aria-label="Shop Flow home"><img src="../assets/shop-flow-logo.svg" alt="Shop Flow"></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a class="active" href="checkout.html">Orders</a>
+        <a href="cart.html">Cart <span id="cartCount" class="cart-count">0</span></a>
+      </nav>
+      <button id="themeButton" class="theme-button" aria-label="Switch to dark theme" title="Switch to dark theme"><img class="icon" src="../assets/icon-moon.svg" alt=""></button>
+    </div>
+  </header>
+
+  <main class="page">
+    <h1 class="section-title checkout-page-title">Delivery &amp; payment</h1>
+    <p class="message" id="checkoutMessage"></p>
+
+    <div class="checkout-layout">
+      <section class="checkout-panel" aria-labelledby="checkout-title">
+        <h2 class="section-title" id="checkout-title">Where should we deliver?</h2>
+        <div id="checkoutFormContainer">
+          <form id="checkoutForm">
+            <div class="checkout-fields">
+              <div class="form-group">
+                <label for="name">Full name</label>
+                <input type="text" id="name" autocomplete="name" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Mobile or WhatsApp number</label>
+                <input type="tel" id="phone" autocomplete="tel" inputmode="tel" placeholder="+963 ..." required>
+              </div>
+              <div class="form-group">
+                <label for="country">Country</label>
+                <select id="country" autocomplete="country-name" required>
+                  <option value="Syria">Syria</option>
+                  <option value="Lebanon">Lebanon</option>
+                  <option value="Jordan">Jordan</option>
+                  <option value="Iraq">Iraq</option>
+                  <option value="Turkey">Turkey</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="region">Governorate / region</label>
+                <input type="text" id="region" autocomplete="address-level1" placeholder="e.g. Latakia" required>
+              </div>
+              <div class="form-group">
+                <label for="city">City or town</label>
+                <input type="text" id="city" autocomplete="address-level2" required>
+              </div>
+              <div class="form-group form-group-wide">
+                <label for="address">Street, building, floor and apartment</label>
+                <textarea id="address" autocomplete="street-address" rows="3" required></textarea>
+              </div>
+              <div class="form-group form-group-wide">
+                <label for="landmark">Nearby landmark <span class="optional-label">(optional)</span></label>
+                <input type="text" id="landmark" placeholder="A shop, mosque, school or other nearby place">
+              </div>
+              <div class="form-group form-group-wide">
+                <label for="email">Email <span class="optional-label">(optional)</span></label>
+                <input type="email" id="email" autocomplete="email">
+              </div>
+            </div>
+            <div class="payment-choice">
+              <span class="payment-icon" aria-hidden="true"><img src="../assets/icon-cash-delivery.svg" alt=""></span>
+              <span><strong>Cash on delivery</strong><small>Pay in cash when your order arrives. We’ll confirm delivery details by phone.</small></span>
+              <span class="payment-selected">Selected</span>
+            </div>
+            <button type="submit" class="main-button checkout-submit">Confirm demo order</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="checkout-summary-panel" aria-labelledby="summary-title">
+        <h2 class="section-title" id="summary-title">Your order</h2>
+        <div class="checkout-summary" id="checkoutSummary"></div>
+      </section>
+    </div>
+
+    <section class="orders-panel" aria-labelledby="orders-title">
+      <h2 class="section-title" id="orders-title">Previous orders</h2>
+      <p class="message" id="ordersMessage">Loading orders...</p>
+      <div id="ordersList"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><strong>Shop Flow</strong> <span>From Latakia, for the neighborhood.</span></p>
+    <p class="currency-rate-status" id="currencyRateStatus"></p>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/checkout.js"></script>
+</body>
+</html>
