@@ -75,20 +75,7 @@ This state is specific to the browser profile and site origin. It is not synchro
 - Buttons, links, and form controls have visible keyboard focus styling. Navigation, product ratings, page controls, and checkout sections include accessible labels or relationships.
 - Product and brand artwork is supplied by local SVG assets; catalog product thumbnails are remote.
 
-## 6. Scope boundaries and current limitations
-
-- There is no user registration, sign-in, server-side session, or account-level persistence.
-- There is no backend catalog management, inventory validation, price locking, or stock reservation.
-- Checkout does not create a remotely visible order, collect payment, calculate delivery, or contact a courier.
-- Cash on delivery is the only displayed payment option.
-- Orders, cart contents, favorites, and customer details are client-side records and can be edited or removed in the browser.
-- Product browsing and price estimates depend on third-party network services. There is no local catalog fallback.
-- Search matches product titles only; it does not search descriptions or categories as free text.
-- Favorites can be added or removed from a product detail page or removed directly from the home page's Favorites list.
-- The home page's product and category counts reflect the catalog response currently fetched by the client, capped at 100 products.
-- The current order-success message in `js/checkout.js` reads “order saved. Cash on delivery is selected” with a leading space; it could be made clearer, and should continue to identify the order as a demo.
-
-## 7. Source map
+## 6. Source map
 
 - Shared behavior, API integration, storage, theme, and product-card rendering: `js/script.js`
 - Home page: `html/index.html`, `js/home.js`

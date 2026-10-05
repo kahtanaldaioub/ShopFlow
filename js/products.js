@@ -1,6 +1,6 @@
 let allProducts = [];
 let currentPage = 1;
-const productsPerPage = 12;
+const productsPerPage = 10;
 
 document.addEventListener('DOMContentLoaded', () => {
   fetchProducts()
