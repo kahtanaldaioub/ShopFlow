@@ -207,8 +207,12 @@ function renderStars(rating) {
 }
 
 function renderProductCard(product) {
+  const detailsPage = window.location.pathname.includes('/html/')
+    ? 'productDetails.html'
+    : './html/productDetails.html';
+
   return `
-    <a class="product-card" href="productDetails.html?id=${product.id}">
+    <a class="product-card" href="${detailsPage}?id=${product.id}">
       <div class="product-card-art">
         <span class="product-category">${product.category}</span>
         <span class="product-card-orbit" aria-hidden="true"></span>
