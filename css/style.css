@@ -1943,7 +1943,8 @@ body.light .stat span {
 
 .order-details {
   display: grid;
-  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
   padding: 12px 18px;
 }
 
@@ -1957,12 +1958,18 @@ body.light .stat span {
 }
 
 .order-details p {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
   margin: 0;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
   font-size: 13px;
 }
 
 .order-details p > strong {
-  flex: 0 0 82px;
   color: var(--muted);
   font-size: 11px;
   text-transform: uppercase;
@@ -1971,7 +1978,8 @@ body.light .stat span {
 .order-details p > span,
 .order-items li > span:first-child {
   min-width: 0;
-  text-align: right;
+  width: 100%;
+  text-align: left;
   overflow-wrap: anywhere;
 }
 
@@ -2017,6 +2025,10 @@ body.light .stat span {
 }
 
 @media (max-width: 480px) {
+  .order-details {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .product-card-art {
     min-height: 166px;
   }
