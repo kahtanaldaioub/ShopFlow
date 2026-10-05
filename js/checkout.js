@@ -104,7 +104,7 @@ function placeOrder() {
 
   localStorage.removeItem('shopflow_cart');
   updateCartCount();
-  showMessage('checkoutMessage', ' order saved. Cash on delivery is selected', 'success');
+  showMessage('checkoutMessage', 'Order saved. Cash on delivery is selected.', 'success');
   document.getElementById('checkoutForm').reset();
   updateCheckoutAvailability(true);
   renderCheckoutSummary();

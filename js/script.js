@@ -137,7 +137,8 @@ function updateThemeButton() {
   const isDark = document.body.classList.contains('dark');
   const icon = document.createElement('img');
   icon.className = 'icon';
-  icon.src = isDark ? '../assets/icon-sun.svg' : '../assets/icon-moon.svg';
+  const assetPath = window.location.pathname.includes('/html/') ? '../assets/' : './assets/';
+  icon.src = `${assetPath}${isDark ? 'icon-sun.svg' : 'icon-moon.svg'}`;
   icon.alt = '';
   themeButton.replaceChildren(icon);
   themeButton.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
